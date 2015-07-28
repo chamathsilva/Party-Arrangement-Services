@@ -5,6 +5,6 @@ $dbc = mysqli_connect('localhost','root','root', 'Party_Arrangement_Services') o
 
 #Constants:
 DEFINE('TEMPLATES','resources/templates/');
-DEFINE('CONFIG','resources/configuration/')
+DEFINE('CONFIG','resources/configuration/');
  
 ?>

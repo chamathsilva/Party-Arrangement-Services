@@ -1,5 +1,5 @@
-<!--<? include ('resources/configuration/setup.php'); ?> -->
-<?php include ('resources'); ?>
+
+<?php include ('resources/configuration/setup.php');?>
 
 
 <!DOCTYPE html>
