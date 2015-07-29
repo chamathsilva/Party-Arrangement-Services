@@ -1,3 +1,9 @@
-<footer class="footer">		
-	<center><h4>Party Arrangement Servies | 2015<h4></center>
-</footer>
+ <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; Party Arrangment Services 2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>

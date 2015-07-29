@@ -1,5 +1,5 @@
-<!-- JQuery -->
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- jQuery -->
+<script src="public_html/JS/jquery.js"></script>
 
-<!-- Latest compiled and minified JavaScript --> 
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="public_html/JS/bootstrap.min.js"></script>

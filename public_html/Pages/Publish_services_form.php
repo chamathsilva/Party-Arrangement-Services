@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-	<title>Party Arrangement Services | About</title>
+	<title>Party Arrangement Services | Services</title>
 	<!-- Bootstrap Core CSS -->
 	<link href="../CSS/bootstrap.min.css" rel="stylesheet">
 	<!-- Custom CSS -->
@@ -23,8 +23,7 @@
 		<div class="brand">Party Arrangment Services</div>
    		<div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
 		<?php include ('../../'.TEMPLATES.'navigation_bar.php'); ?>
-		<div class="brand"> <h1>It's Free Register Now</h1></div>
-		
+
 		
 		<div class="container"
 		  <div class="row">
@@ -32,63 +31,105 @@
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                        <strong>Register</strong>
+                        <strong>Publish Services</strong>
                     </h2>
                     <hr>
-                    <form  action='Service_provider_registration.php' method="POST">
+                    <form  action='Publish_services_form.php' method="post">
                     	
                     	<div class="row">
                             <div class="form-group col-lg-4 col-lg-offset-1">
-                                <label>UserName</label>
+                                <label>Name</label>
                                 <input type="text" class="form-control">
                             </div>
                              <div class="form-group col-lg-7">
                                 <label></label>
-                                <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+                                <p class="help-block">Set some help text</p>
                             </div>
                             
                 		</div>
                 		
                 		<div class="row">
                             <div class="form-group col-lg-4 col-lg-offset-1">
-                                <label>Email</label>
-                                <input type="email" class="form-control">
+                                <label>Contact Number</label>
+                                <input type="text" class="form-control">
                             </div>
                              <div class="form-group col-lg-7">
                                 <label></label>
-                                <p class="help-block">Please provide your E-mail</p>
+                                <p class="help-block">Set some help text</p>
                             </div>
                 		</div>
                 		
                 		<div class="row">
                             <div class="form-group col-lg-4 col-lg-offset-1">
-                                <label>Password</label>
-                                <input type="password" class="form-control">
+                                <label>Email Address</label>
+                                <input type="text" class="form-control">
                             </div>
                              <div class="form-group col-lg-7">
                                 <label></label>
-                                <p class="help-block">Password should be at least 4 characters</p>
+                                <p class="help-block">Set some help text</p>
                             </div>
                 		</div>
                 		
                 		<div class="row">
                             <div class="form-group col-lg-4 col-lg-offset-1">
-                                <label>Password(Confirm)</label>
-                                <input type="password" class="form-control">
+                                <label>Scope of service</label>
+                                <input type="text" class="form-control">
                             </div>
                              <div class="form-group col-lg-7">
                                 <label></label>
-                                <p class="help-block">Please confirm password</p>
+                                <p class="help-block">Set some help text</p>
                             </div>
                 		</div>
                 		
                 		
+                		
+                		<div class="row">
+                            <div class="form-group col-lg-4 col-lg-offset-1">
+                                <label>Charges</label>
+                                <input type="text" class="form-control">
+                            </div>
+                             <div class="form-group col-lg-7">
+                                <label></label>
+                                <p class="help-block">Set some help text</p>
+                            </div>
+                		</div>
+                		
+                		
+                		<div class="row">
+                            <div class="form-group col-lg-4 col-lg-offset-1">
+                                <label>specialization</label>
+                                <input type="text" class="form-control">
+                            </div>
+                             <div class="form-group col-lg-7">
+                                <label></label>
+                                <p class="help-block">Set some help text</p>
+                            </div>
+                		</div>
+                		
+                		<div class="row">
+                            <div class="form-group col-lg-4 col-lg-offset-1">
+                                <label>Select your Services category</label><br>
+                                <select name="category">
+									<option value="">Select a category...</option>
+									<option value="caterers">caterers</option>
+									<option value="sounds">sounds</option>
+									<option value="bands">bands</option>
+									<option value="decorators">decorators</option>
+								</select>
+                            </div>
+                             <div class="form-group col-lg-7">
+                                <label></label>
+                                <p class="help-block">Set some help text</p>
+                            </div>
+                		</div>
+
+   		
                 		<div class="row">
                 			<div class="form-group col-lg-12 ">
                 			</div>
 	                		<div class="form-group col-lg-4 col-lg-offset-4 ">
 	                                <!--<input type="hidden" name="save" value="contact">-->
-	                                <button type="submit" class="btn btn-primary btn-block">Register</button>
+	                                <button type="submit" class="btn btn-primary btn-block">Publish</button>
 	                        </div>
 	                    </div>
                     </form>
