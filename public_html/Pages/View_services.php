@@ -98,7 +98,15 @@
                     	<div class="col-lg-4 ">                   		
                     		<label><h4><?php echo $spec; ?></h4></label>                   		
                     	</div>
-                   	</div>                                    	
+                   	</div>   
+                   	
+                   	
+                   	   <div class="form-group col-lg-4 col-lg-offset-4">
+                    		<p align="center"><label></label></p>
+                            <form action="../../index.php" role = "form">
+    						<button type="submit" class = "btn btn-success  btn-block " > Back</button>
+					</form>
+					</div>                                 	
                    	
                 </div>
             </div>

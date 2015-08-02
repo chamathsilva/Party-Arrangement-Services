@@ -45,7 +45,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
 						if (mysqli_query($dbc, $query_update)){
 							$isupdated = TRUE;
 						}else{
-							$massage  = "Sorry, we couldn/'t register you at this time.Try again later.";
+							$massage  = "Sorry, we couldn/'t update you at this time.Try again later.";
 						}
 					}
 				}else{

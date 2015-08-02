@@ -15,7 +15,7 @@ if (isset($_POST['username']) && isset($_POST['passsword'])){
 	
 	if ( !empty($username) && !empty($password)){
 		$password_hash = md5($password);
-		$query = "SELECT `id` FROM `users` WHERE `username` = '$username' AND `password` = '$password_hash'";
+		$query = "SELECT * FROM `users` WHERE `username` = '$username' AND `password` = '$password_hash'";
 		if ($query_result = mysqli_query($dbc, $query)){
 			$query_num_rows = mysqli_num_rows($query_result);
 			
@@ -26,8 +26,13 @@ if (isset($_POST['username']) && isset($_POST['passsword'])){
 				$query_row = mysqli_fetch_assoc($query_result);
 				$user_id = $query_row['id'];
 				$_SESSION['user_id'] = $user_id;
-				header('location: Service_provider_home.php');
-			}
+				$type = $query_row['usertype'];
+				if ($type == 0){
+					header('location: Service_provider_home.php');
+				}else{
+					header('location: admin_home.php');
+				}
+		}
 		}else{
 			echo mysqli_error($dbc);
 		}

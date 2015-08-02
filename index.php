@@ -80,7 +80,7 @@
                     
                     <div class="row">
                     	<div class="col-lg-3 ">
-                    		<img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
+                    		<img class="img-responsive img-border img-left" src="public_html/img/catrgn.jpg" alt="">
                     	</div>
                     <hr class="visible-xs">
                     <div class="col-lg-8 ">
@@ -93,10 +93,10 @@
 										echo '<li>'.'No Services Publish yet'.'</li>';
 									}else{
 										
-										while ($query_row = mysqli_fetch_assoc($query_result)) {
+											while ($query_row = mysqli_fetch_assoc($query_result)) {
 											$id = $query_row['id'];
 											$name = $query_row['name'];
-											echo '<li>'."<a href ='View_services.php?id=$id'> $name </a>".'<li>';
+											echo '<li>'."<a href ='public_html/Pages/View_services.php?id=$id'> $name </a>".'</li>';
 										}
 
 
@@ -130,7 +130,7 @@
                     
                     <div class="row">
                     	<div class="col-lg-3 ">
-                    		<img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
+                    		<img class="img-responsive img-border img-left" src="public_html/img/deco.jpg" alt="">
                     	</div>
                     <hr class="visible-xs">
                     <div class="col-lg-8 ">
@@ -143,10 +143,10 @@
 										echo '<li>'.'No Services Publish yet'.'</li>';
 									}else{
 										
-										while ($query_row = mysqli_fetch_assoc($query_result)) {
+											while ($query_row = mysqli_fetch_assoc($query_result)) {
 											$id = $query_row['id'];
 											$name = $query_row['name'];
-											echo '<li>'."<a href ='View_services.php?id=$id'> $name </a>".'<li>';
+											echo '<li>'."<a href ='public_html/Pages/View_services.php?id=$id'> $name </a>".'</li>';
 										}
 										
 									}
@@ -176,7 +176,7 @@
                     
                     <div class="row">
                     	<div class="col-lg-3 ">
-                    		<img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
+                    		<img class="img-responsive img-border img-left" src="public_html/img/ssd.jpg" alt="">
                     	</div>
                     <hr class="visible-xs">
                     <div class="col-lg-8 ">
@@ -222,7 +222,7 @@
                     
                     <div class="row">
                     	<div class="col-lg-3 ">
-                    		<img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
+                    		<img class="img-responsive img-border img-left" src="public_html/img/band.jpg" alt="">
                     	</div>
                     <hr class="visible-xs">
                     <div class="col-lg-8 ">
@@ -236,7 +236,9 @@
 									}else{
 										
 										while ($query_row = mysqli_fetch_assoc($query_result)) {
-											echo '<li>'.$query_row['name'].'</li>';
+											$id = $query_row['id'];
+											$name = $query_row['name'];
+											echo '<li>'."<a href ='public_html/Pages/View_services.php?id=$id'> $name </a>".'</li>';
 										}
 									
 									}
@@ -251,61 +253,7 @@
                 
             </div>
         </div>
-        
-        
-        <!--
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">
-                    	<strong><a href="index.php">sounds</a> </strong>
 
-                    </h2>
-                    <hr>
-                    <img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
-                    <hr class="visible-xs">       
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,.</p>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">
-                    	<strong><a href="index.php">bands</a> </strong>
-                   
-                    </h2>
-                    <hr>
-                    <img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
-                    <hr class="visible-xs">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,.</p>
-                 </div>
-            </div>
-        </div>
-        
-        
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">
-                        <strong><a href="index.php">decorators</a> </strong>
-                        
-                    </h2>
-                    <hr>
-                    <img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
-                    <hr class="visible-xs">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,.</p>
-                </div>
-            </div>
-        </div>
-</div>
-		-->
-		
 		</div>
 		<?php include (TEMPLATES.'footer.php'); ?>
 		<?php include (CONFIG.'JS.php');  ?>

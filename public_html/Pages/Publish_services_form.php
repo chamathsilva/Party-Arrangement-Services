@@ -19,7 +19,7 @@ if (!loggedin()){
 		$category = $_POST['category'];
 		$userid = $_SESSION['user_id'];
 		
-		echo $name." ".$contact." ".$emailAdd." ".$scope." ".$charges." ".$spec." ".$category.$_SESSION['user_id'];
+		
 		
 		
 		if (!empty($name) && !empty($contact) && !empty($emailAdd) && !empty($scope) && !empty($charges) && !empty($spec) && !empty($category)){
