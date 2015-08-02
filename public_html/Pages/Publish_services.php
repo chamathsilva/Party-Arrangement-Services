@@ -23,7 +23,7 @@
 		<div class="brand">Party Arrangment Services</div>
    		<div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
 		<?php include ('../../'.TEMPLATES.'navigation_bar.php'); ?>
-		<div class="brand"> <h1>About</h1></div>
+		<div class="brand"> <h1></h1></div>
 		
 	
 		

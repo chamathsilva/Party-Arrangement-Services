@@ -1,6 +1,5 @@
-
-<!-- Navigation -->
-    <nav class="navbar navbar-default" role="navigation">
+		<!-- Navigation -->
+    	<nav class="navbar navbar-inverse" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -16,6 +15,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                	
                     <li>
                         <a href="../../index.php">Home</a>
                     </li>
@@ -28,6 +28,11 @@
                     <li>
                         <a href="Contact.php">Contact</a>
                     </li>
+                    
+                    <li>
+                    	
+                        <a href="logout.php"><span style='color:#FF0000'>Log out</a>
+                    </li>
                   
                     
                     
@@ -37,11 +42,3 @@
         </div>
         <!-- /.container -->
     </nav>
-
-
-
-  
-
-
-
-  

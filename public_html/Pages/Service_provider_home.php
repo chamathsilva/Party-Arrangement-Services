@@ -1,5 +1,7 @@
 <? include ('../../resources/configuration/setup.php'); ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -20,14 +22,40 @@
 
 	</head>
 	<body>
+	
 		<div class="brand">Party Arrangment Services</div>
    		<div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
-		<?php include ('../../'.TEMPLATES.'navigation_bar.php'); ?>
-		<div class="brand"> <h1>About</h1></div>
+		<?php include ('../../'.TEMPLATES.'back_navigation_bar.php'); ?>
 		
-		
-		
-		
+   		<!--<div class="address-bar"><?php echo "Hello"." ".getField("username",$dbc); ?></div> -->
+   
+   		<div class="container"
+		  <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong> <?php echo "Hello"." ".getField("username",$dbc); ?> </strong>
+                    </h2>
+                    <hr>
+                    <div class="form-group col-lg-4 col-lg-offset-4">
+                    		<p align="center"><label>Click here to publish new service</label></p>
+                            <form action="Publish_services_form.php" role = "form">
+    						<button type="submit" class = "btn btn-success  btn-block " >Publish</button>
+					</form>
+					</div>
+                    
+                   
+                </div> 
+            </div>
+        </div>
+     </div>
+   
+   
+   
+   
+   
+
 		<?php include ('../../'.TEMPLATES.'footer.php'); ?>
 		<!-- jQuery -->
 		<script src="../JS/jquery.js"></script>

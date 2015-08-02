@@ -1,4 +1,43 @@
-<? include ('../../resources/configuration/setup.php'); ?>
+<?php include ('../../resources/configuration/setup.php'); ?>
+
+<?php
+
+if (loggedin()){
+	header('location: Service_provider_home.php');
+}
+
+$ph_username = "";
+$ph_password = "";
+
+if (isset($_POST['username']) && isset($_POST['passsword'])){
+	$username = $_POST['username'];
+	$password = $_POST['passsword'];
+	
+	if ( !empty($username) && !empty($password)){
+		$password_hash = md5($password);
+		$query = "SELECT `id` FROM `users` WHERE `username` = '$username' AND `password` = '$password_hash'";
+		if ($query_result = mysqli_query($dbc, $query)){
+			$query_num_rows = mysqli_num_rows($query_result);
+			
+			if ($query_num_rows == 0){
+				$ph_username = "Invalid username/password combination.";
+		
+			}else{
+				$query_row = mysqli_fetch_assoc($query_result);
+				$user_id = $query_row['id'];
+				$_SESSION['user_id'] = $user_id;
+				header('location: Service_provider_home.php');
+			}
+		}else{
+			echo mysqli_error($dbc);
+		}
+	}else{
+		$ph_username = "You must supply a username";
+		$ph_password = "You must supply a password";
+	}
+	
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,9 +64,7 @@
 		<?php include ('../../'.TEMPLATES.'navigation_bar.php'); ?>
 		<div class="brand"> <h1>Publish Services</h1></div>
 		
-		
-		
-			<div class="container"
+		<div class="container"
 		  <div class="row">
             <div class="box">
                 <div class="col-lg-12">
@@ -42,14 +79,23 @@
                         <div class="row">
                             <div class="form-group col-lg-4 col-lg-offset-4">
                                 <label>User Name</label>
-                                <input type="email" class="form-control">
+                                <input type="email" name="username" class="form-control">
+                                
                             </div>
+                            <div class="form-group col-lg-4">
+                            	<?php echo "<span style='color:#FF0000'><br><br>$ph_username" ?>
+                            </dive>
+                            
                 		</div>
                         <div class="row">
                             <div class="form-group col-lg-4 col-lg-offset-4">
                                 <label>Passowrd</label>
-                                <input type="password" class="form-control">
+                                <input type="password" name="passsword" class="form-control" >
                             </div>
+                            <div class="form-group col-lg-4">
+                            	<?php echo "<span style='color:#FF0000'><br><br>$ph_password" ?>
+                            </dive>
+                            
                       	</div>
                     
                             <div class="form-group col-lg-1 col-lg-offset-5 ">
@@ -68,10 +114,6 @@
         </div>
      </div>
      
-
-		
-		
-		
 		<?php include ('../../'.TEMPLATES.'footer.php'); ?>
 		<!-- jQuery -->
 		<script src="../JS/jquery.js"></script>

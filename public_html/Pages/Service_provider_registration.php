@@ -1,5 +1,58 @@
 <? include ('../../resources/configuration/setup.php'); ?>
 
+<?php
+
+if (loggedin()){
+	header('location: Service_provider_home.php');
+}else{
+	$massage ="";
+	$username ="";
+	$email = "";
+	$isRegisterd = FALSE;
+
+	
+	if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['passwordconfirm']) ){
+		$username = $_POST['username'];
+		$email = $_POST['email'];
+		$password = $_POST['password'];
+		$passwordConfirm = $_POST['passwordconfirm'];
+		if (!empty($username) && !empty($email) && !empty($password) && !empty($passwordConfirm)){
+			if ($password != $passwordConfirm){
+				$massage = "Password do not match.";
+			}else{
+				$queryValidate = "SELECT `username` FROM `users` WHERE `username` = '$username'";
+				if ($query_result = mysqli_query($dbc, $queryValidate)){
+					if (mysqli_num_rows($query_result) == 1){
+						$massage = 'The username '.$username.' already exists.';
+					}else{
+						$password_hash = md5($password);
+						$query_register = "INSERT INTO `users` VALUES ('','".mysqli_real_escape_string($dbc,$username)."','".mysqli_real_escape_string($dbc,$email)."','".mysqli_real_escape_string($dbc,$password_hash)."','')";
+						if (mysqli_query($dbc, $query_register)){
+							$isRegisterd = TRUE;
+						}else{
+							$massage  = "Sorry, we couldn/'t register you at this time.Try again later.";
+						}
+					}
+				}else{
+					echo mysqli_error($dbc);
+				}
+			}
+			
+		}else{
+			$massage = "All fields are required";
+		}
+		
+	}
+	
+}
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -25,87 +78,39 @@
 		<?php include ('../../'.TEMPLATES.'navigation_bar.php'); ?>
 		<div class="brand"> <h1>It's Free Register Now</h1></div>
 		
+		<?php 
 		
+		if (!$isRegisterd){
+			include ('registrationform.inc.php'); 
+		}else{?>
+			
 		<div class="container"
 		  <div class="row">
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                        <strong>Register</strong>
+                        <strong>You're registerd.</strong>
                     </h2>
                     <hr>
-                    <form  action='Service_provider_registration.php' method="POST">
-                    	
-                    	<div class="row">
-                            <div class="form-group col-lg-4 col-lg-offset-1">
-                                <label>UserName</label>
-                                <input type="text" class="form-control">
-                            </div>
-                             <div class="form-group col-lg-7">
-                                <label></label>
-                                <p class="help-block">Username can contain any letters or numbers, without spaces</p>
-                            </div>
-                            
-                		</div>
-                		
-                		<div class="row">
-                            <div class="form-group col-lg-4 col-lg-offset-1">
-                                <label>Email</label>
-                                <input type="email" class="form-control">
-                            </div>
-                             <div class="form-group col-lg-7">
-                                <label></label>
-                                <p class="help-block">Please provide your E-mail</p>
-                            </div>
-                		</div>
-                		
-                		<div class="row">
-                            <div class="form-group col-lg-4 col-lg-offset-1">
-                                <label>Password</label>
-                                <input type="password" class="form-control">
-                            </div>
-                             <div class="form-group col-lg-7">
-                                <label></label>
-                                <p class="help-block">Password should be at least 4 characters</p>
-                            </div>
-                		</div>
-                		
-                		<div class="row">
-                            <div class="form-group col-lg-4 col-lg-offset-1">
-                                <label>Password(Confirm)</label>
-                                <input type="password" class="form-control">
-                            </div>
-                             <div class="form-group col-lg-7">
-                                <label></label>
-                                <p class="help-block">Please confirm password</p>
-                            </div>
-                		</div>
-                		
-                		
-                		<div class="row">
-                			<div class="form-group col-lg-12 ">
-                			</div>
-	                		<div class="form-group col-lg-4 col-lg-offset-4 ">
-	                                <!--<input type="hidden" name="save" value="contact">-->
-	                                <button type="submit" class="btn btn-primary btn-block">Register</button>
-	                        </div>
-	                    </div>
-                    </form>
-                    </div>
-                </div>
+                    <div class="form-group col-lg-4 col-lg-offset-4">
+                    		<p align="center"><label>Click here to sign in</label></p>
+                            <form action="Service_provider.php" role = "form">
+    						<button type="submit" class = "btn btn-success  btn-block " > Sign in</button>
+					</form>
+					</div>
+                    
+                    
+                </div> 
             </div>
-    	</div>
-
+        </div>
+     </div>
+	<?php
+	}
+	?>
+	
 		
-		
-		
-		
-		
-		
-		
-		
-		
+    	
 		<?php include ('../../'.TEMPLATES.'footer.php'); ?>
 		<!-- jQuery -->
 		<script src="../JS/jquery.js"></script>
