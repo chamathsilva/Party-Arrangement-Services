@@ -29,48 +29,70 @@
 		
    		<!--<div class="address-bar"><?php echo "Hello"." ".getField("username",$dbc); ?></div> -->
    
-   		<div class="container"
+ <div class="container"
 		  <div class="row">
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                        <strong> <?php echo "Hello"." ".getField("username",$dbc); ?> </strong>
+                        <strong> Manage services </strong>
                     </h2>
                     <hr>
                     
-                    <div class="row">
-                            <div class="col-lg-4 ">
-                                <label>Your current services</label>
-                                <?php
-                                $userid = $_SESSION['user_id'];
-                                $query = "SELECT * FROM `services` WHERE `userid` = '$userid'";
-								if ($query_result = mysqli_query($dbc, $query)){
+                    
+                    <?php 
+                    	$query = "SELECT * FROM `services`";
+						if ($query_result = mysqli_query($dbc, $query)){
 									if (mysqli_num_rows($query_result) == NULL){
-										echo "You have no Services Publish yet";
+										echo 'No Users;';
 									}else{
-										echo '<ol>';
 										while ($query_row = mysqli_fetch_assoc($query_result)) {
-											echo '<li>'.$query_row['name'].'</li>';
-										}
-										echo '</ol>';
+											$id = $query_row['id'];
+											$name = $query_row['name'];
+											?>
+							<div class="row">   	
+                    		<div class="form-group col-lg-4">
+                    			<p><?php echo $name; ?></p>
+                    		</div>
+                        	<div class="form-group col-lg-4">
+                            	<form action="update_user.php?id = 5" role = "form" method="post">
+    							
+    							<button type="submit"  class = "btn btn-success  btn-block " formaction="update_services.php?id=<?php echo $id ?>">Update</button>								
+							</div> 
+							<div class="form-group col-lg-4">
+								
+								<button type="submit"  class = "btn btn-success  btn-block " formaction="delete_services.php?id=<?php echo $id ?>">Delete</button>	
+							</div>
+							</form>                                              
+                   	</div>
+                   	
+                   	<?php
+											
+											
+											
+											
+										}										
 									}
 								}
-                                ?>
-                            </div>
-                    
-                    		<div class="form-group col-lg-4 col-lg-offset-4">
-                    			<p align="center"><label>Click here to publish new service</label></p>
-                            	<form action="Publish_services_form.php" role = "form">
-    							<button type="submit" class = "btn btn-success  btn-block " >Publish</button>
-								</form>
-							</div>
-                    
-                   </div>
+                         ?>
+                         
+                             	<div class="row">   	
+                    		<div class="form-group col-lg-4">
+                    		</div>
+                        	<div class="form-group col-lg-4">
+                            	<form action="admin_home.php" role = "form" method="post">
+    							
+    							<button type="submit"  class = "btn btn-warning btn-block " >Back</button>								
+							</div> 
+						
+							</form>                                              
+                   	</div>
+
                 </div> 
             </div>
         </div>
      </div>
+   
    
    
    

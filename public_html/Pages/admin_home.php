@@ -35,34 +35,22 @@
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                        <strong> <?php echo "Hello"." ".getField("username",$dbc); ?> </strong>
+                        <strong> Admin Panal </strong>
                     </h2>
                     <hr>
                     
                     <div class="row">
-                            <div class="col-lg-4 ">
-                                <label>Your current services</label>
-                                <?php
-                                $userid = $_SESSION['user_id'];
-                                $query = "SELECT * FROM `services` WHERE `userid` = '$userid'";
-								if ($query_result = mysqli_query($dbc, $query)){
-									if (mysqli_num_rows($query_result) == NULL){
-										echo "You have no Services Publish yet";
-									}else{
-										echo '<ol>';
-										while ($query_row = mysqli_fetch_assoc($query_result)) {
-											echo '<li>'.$query_row['name'].'</li>';
-										}
-										echo '</ol>';
-									}
-								}
-                                ?>
-                            </div>
+                        	<div class="form-group col-lg-4">
+                    			<p align="center"><label>Click here to Manage users</label></p>
+                            	<form action="manage_users.php" role = "form">
+    							<button type="submit" class = "btn btn-success  btn-block " >Manage users</button>
+								</form>
+							</div>
                     
                     		<div class="form-group col-lg-4 col-lg-offset-4">
-                    			<p align="center"><label>Click here to publish new service</label></p>
-                            	<form action="Publish_services_form.php" role = "form">
-    							<button type="submit" class = "btn btn-success  btn-block " >Publish</button>
+                    			<p align="center"><label>Click here to Manage service</label></p>
+                            	<form action="manage_services.php" role = "form">
+    							<button type="submit" class = "btn btn-success  btn-block " >Manage service</button>
 								</form>
 							</div>
                     

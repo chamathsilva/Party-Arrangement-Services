@@ -84,8 +84,7 @@ if (isset($_POST['username']) && isset($_POST['passsword'])){
                             </div>
                             <div class="form-group col-lg-4">
                             	<?php echo "<span style='color:#FF0000'><br><br>$ph_username" ?>
-                            </dive>
-                            
+                            </div>
                 		</div>
                         <div class="row">
                             <div class="form-group col-lg-4 col-lg-offset-4">
@@ -94,10 +93,9 @@ if (isset($_POST['username']) && isset($_POST['passsword'])){
                             </div>
                             <div class="form-group col-lg-4">
                             	<?php echo "<span style='color:#FF0000'><br><br>$ph_password" ?>
-                            </dive>
-                            
+                            </div>
                       	</div>
-                    
+                    	 <div class="row">
                             <div class="form-group col-lg-1 col-lg-offset-5 ">
                                 <!--<input type="hidden" name="save" value="contact">-->
                                 <button type="submit" class="btn btn-default">Sign in</button>
@@ -107,6 +105,7 @@ if (isset($_POST['username']) && isset($_POST['passsword'])){
                             <form action="Service_provider_registration.php" role = "form">
     							<button type="submit" class = "btn btn-success" > Sign up </button>
 							</form>
+							</div>
 							</div>
                         </div>
                 </div>

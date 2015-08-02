@@ -6,8 +6,6 @@ if (!loggedin()){
 	header('location: Service_provider.php');
 }else{
 	$massage ="";
-	$username ="";
-	$email = "";
 	$isPublished = FALSE;
 
 	

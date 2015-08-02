@@ -34,13 +34,13 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="img-responsive img-full" src="public_html/img/slide-1.jpg" alt="">
+                                <img class="img-responsive img-full" src="public_html/img/s1.jpg" alt="">
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="public_html/img/slide-2.jpg" alt="">
+                                <img class="img-responsive img-full" src="public_html/img/s2.jpg" alt="">
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="public_html/img/slide-3.jpg" alt="">
+                                <img class="img-responsive img-full" src="public_html/img/s3.jpg" alt="">
                             </div>
                         </div>
 
@@ -77,13 +77,183 @@
 
                     </h2>
                     <hr>
-                    <img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
+                    
+                    <div class="row">
+                    	<div class="col-lg-3 ">
+                    		<img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
+                    	</div>
                     <hr class="visible-xs">
-                    <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
+                    <div class="col-lg-8 ">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,.</p>
+                    <ul style="list-style-type:square">
+                    	<?php 
+                    	$query = "SELECT * FROM `services` WHERE `category` = 'caterers'";
+						if ($query_result = mysqli_query($dbc, $query)){
+									if (mysqli_num_rows($query_result) == NULL){
+										echo '<li>'.'No Services Publish yet'.'</li>';
+									}else{
+										
+										while ($query_row = mysqli_fetch_assoc($query_result)) {
+											$id = $query_row['id'];
+											$name = $query_row['name'];
+											echo '<li>'."<a href ='View_services.php?id=$id'> $name </a>".'<li>';
+										}
+
+
+										
+									}
+								}
+                         ?>
+                   </ul>
+                   </div>
+                    	
+                 </div>
                 </div>
+                
+                
             </div>
         </div>
         
+        
+        
+        
+        
+        	<div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                    	<strong><a href="index.php">decorators</a> </strong>
+
+                    </h2>
+                    <hr>
+                    
+                    <div class="row">
+                    	<div class="col-lg-3 ">
+                    		<img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
+                    	</div>
+                    <hr class="visible-xs">
+                    <div class="col-lg-8 ">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,.</p>
+                    <ul style="list-style-type:square">
+                    	<?php 
+                    	$query = "SELECT * FROM `services` WHERE `category` = 'decorators'";
+						if ($query_result = mysqli_query($dbc, $query)){
+									if (mysqli_num_rows($query_result) == NULL){
+										echo '<li>'.'No Services Publish yet'.'</li>';
+									}else{
+										
+										while ($query_row = mysqli_fetch_assoc($query_result)) {
+											$id = $query_row['id'];
+											$name = $query_row['name'];
+											echo '<li>'."<a href ='View_services.php?id=$id'> $name </a>".'<li>';
+										}
+										
+									}
+								}
+                         ?>
+                   </ul>
+                   </div>
+                    	
+                 </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+        
+        	<div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                    	<strong><a href="index.php">sounds</a> </strong>
+
+                    </h2>
+                    <hr>
+                    
+                    <div class="row">
+                    	<div class="col-lg-3 ">
+                    		<img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
+                    	</div>
+                    <hr class="visible-xs">
+                    <div class="col-lg-8 ">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,.</p>
+                    <ul style="list-style-type:square">
+                    	<?php 
+                    	$query = "SELECT * FROM `services` WHERE `category` = 'sounds'";
+						if ($query_result = mysqli_query($dbc, $query)){
+									if (mysqli_num_rows($query_result) == NULL){
+										echo '<li>'.'No Services Publish yet'.'</li>';
+									}else{
+										
+										while ($query_row = mysqli_fetch_assoc($query_result)) {
+											$id = $query_row['id'];
+											$name = $query_row['name'];
+											echo '<li>'."<a href ='public_html/Pages/View_services.php?id=$id'> $name </a>".'</li>';
+										}
+										
+									}
+								}
+                         ?>
+                   </ul>
+                   </div>
+                    	
+                 </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+        
+        	<div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                    	<strong><a href="index.php">bands</a> </strong>
+
+                    </h2>
+                    <hr>
+                    
+                    <div class="row">
+                    	<div class="col-lg-3 ">
+                    		<img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
+                    	</div>
+                    <hr class="visible-xs">
+                    <div class="col-lg-8 ">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,.</p>
+                    <ul style="list-style-type:square">
+                    	<?php 
+                    	$query = "SELECT * FROM `services` WHERE `category` = 'bands'";
+						if ($query_result = mysqli_query($dbc, $query)){
+									if (mysqli_num_rows($query_result) == NULL){
+										echo '<li>'.'No Services Publish yet'.'</li>';
+									}else{
+										
+										while ($query_row = mysqli_fetch_assoc($query_result)) {
+											echo '<li>'.$query_row['name'].'</li>';
+										}
+									
+									}
+								}
+                         ?>
+                   </ul>
+                   </div>
+                    	
+                 </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+        <!--
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
@@ -95,7 +265,7 @@
                     <hr>
                     <img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
                     <hr class="visible-xs">       
-                    <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,.</p>
                 </div>
             </div>
         </div>
@@ -112,7 +282,7 @@
                     <hr>
                     <img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
                     <hr class="visible-xs">
-                    <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,.</p>
                  </div>
             </div>
         </div>
@@ -129,15 +299,14 @@
                     <hr>
                     <img class="img-responsive img-border img-left" src="public_html/img/intro-pic.jpg" alt="">
                     <hr class="visible-xs">
-                    <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,.</p>
                 </div>
             </div>
         </div>
 </div>
+		-->
 		
-		
-		
-		
+		</div>
 		<?php include (TEMPLATES.'footer.php'); ?>
 		<?php include (CONFIG.'JS.php');  ?>
 	
